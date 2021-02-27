@@ -32,7 +32,7 @@ maybe we create an interface "IMessage" and make all Classes implement it. then 
 in the previous examples: only Class A sends msg to all other classes.
 but what we should do if we want all classes to communicate with each other vice versa??
 so we can make a list of type IMessage in each class and we will register all other objects in it.
-ex:
+```c#
   class A{
     List<Imessage> otherobjectsList ;
 
@@ -55,6 +55,7 @@ ex:
         obj.handleIncomingMsg(msg);
     }
   }
+  ```
 and so on for other classes.
 that is a lot of code and we add the same code to each other classes.
 The classes do a communication task and it should only be responsible for one thing.
