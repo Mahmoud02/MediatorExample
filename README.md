@@ -31,7 +31,7 @@ maybe we create an interface "IMessage" and make all Classes implement it. then 
 ### Case3:
 in the previous examples: only Class A sends msg to all other classes.
 but what we should do if we want all classes to communicate with each other vice versa??
-so we can make a list of type IMessage in each class and we will register all other objects in it.
+we can make a list of type IMessage in each class and we will register all other objects in it.
 ```c#
   class A{
     List<Imessage> otherobjectsList ;
