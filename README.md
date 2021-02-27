@@ -4,7 +4,7 @@ Mediator is a behavioral design pattern that lets you reduce chaotic dependencie
 
 ## before explaining Mediator, let's see these cases 
 ### Case1: if object A wants to send a message to object B!!
-the first solution you think about it is to CREATE  FUNCTION in the "A" class and name it "Send" and this function will receive an object of type B. then the "B" object will handle the msg.
+maybe the first solution you think about it is to CREATE  FUNCTION in the "A" class and name it "Send" and this function will receive an object of type B. then the "B" object will handle the msg.
 ```c#
     class A {
       ---
@@ -20,12 +20,14 @@ ok, that works and maybe good in small solutions.
 ### Case2 :
 but what happens if we want to add more Classe like C, D, Z an and so on and we want A to send messages to all of them?
 maybe we create an interface "IMessage" and make all Classes implement it. then the "Send" function will receive an object of type "Imessage".
+```c#
   interface IMessage{
     void handleIncomingMsg(string msg);
   }
   class A{
     send (Imessage obj )
   }
+ ```  
 ### Case3:
 in the previous examples: only Class A sends msg to all other classes.
 but what we should do if we want all classes to communicate with each other vice versa??
