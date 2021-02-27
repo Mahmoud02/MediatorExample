@@ -66,4 +66,42 @@ Mediator is a behavioral design pattern that lets you reduce chaotic dependencie
 ## let's define each class and its role
 <img src="https://user-images.githubusercontent.com/18700494/109396159-eca07400-7938-11eb-948d-72102a2f4f1b.png" width="60%" height="400"/>
 
+### Mediator [interface or abstarct class]
+```c#
+ public abstract class Mediator
+    {
+        //here we define the methods that will be used by Colleague objects to communicate.
+        public abstract void Send(string message, Colleague colleague);
+    }
+```
+### Mediator [concrete class]
+```c#
+public class ConcreteMediator : Mediator
+    {
+       // here we manage every thing.
+       //knows and maintains its colleagues.
+        //encapsulates the interaction logic between Colleague objects.
+        private List<Colleague> colleagues = new List<Colleague>();
 
+        public void Register(Colleague colleague)
+        {
+            colleague.SetMediator(this);
+            this.colleagues.Add(colleague);
+        }
+
+        public T CreateColleague<T>() where T : Colleague, new()
+        {
+            var c = new T();
+            c.SetMediator(this);
+            this.colleagues.Add(c);
+            return c;
+        }
+
+        public override void Send(string message, Colleague colleague)
+        {
+           
+            this.colleagues.Where(c => c != colleague).ToList().ForEach(c => c.HandleNotification(message));
+
+        }
+    }
+```
