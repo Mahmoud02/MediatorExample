@@ -5,6 +5,13 @@ Mediator is a behavioral design pattern that lets you reduce chaotic dependencie
 ## before explaining Mediator, let's see these cases 
 ### Case1: if object A wants to send a message to object B!!
 the first solution you think about it is to CREATE  FUNCTION in the "A" class and name it "Send" and this function will receive an object of type B. then the "B" object will handle the msg.
+```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```
     class A {
       ---
       ---
