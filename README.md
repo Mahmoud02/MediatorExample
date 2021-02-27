@@ -77,10 +77,11 @@ Mediator is a behavioral design pattern that lets you reduce chaotic dependencie
 ### Mediator [concrete class]
 ```c#
 public class ConcreteMediator : Mediator
-    {
-       // here we manage every thing.
-       //knows and maintains its colleagues.
+        //here we manage every thing.
+        //knows and maintains its colleagues.
         //encapsulates the interaction logic between Colleague objects.
+        //the mediator responsible for the creation and destruction of Colleague objects.
+        
         private List<Colleague> colleagues = new List<Colleague>();
 
         public void Register(Colleague colleague)
@@ -105,3 +106,64 @@ public class ConcreteMediator : Mediator
         }
     }
 ```
+### Colleague [abstract class]
+```c#
+public abstract class Colleague
+    {
+        //defines the abstract class holding a single reference to the Mediator.
+        //should store a reference to the mediator object
+        //each Colleague class knows its Mediator object.
+        //each colleague communicates with its mediator whenever it would have otherwise communicated with another colleague.
+        
+        protected Mediator mediator;
+
+        internal void SetMediator(Mediator mediator)
+        {
+            this.mediator = mediator;
+        }
+
+        public virtual void Send(string message)
+        {
+            this.mediator.Send(message, this);
+        }
+
+        public abstract void HandleNotification(string message);
+    }
+```
+### Colleague [concrete Colleague class]
+```c#
+    public class Colleague1 : Colleague
+        {
+            public override void HandleNotification(string message)
+            {
+                Console.WriteLine($"Colleague1 receives notification message: {message}");
+            }
+        }
+```
+### Colleague [concrete Colleague class]
+```c#
+    public class Colleague2 : Colleague
+        {
+            public override void HandleNotification(string message)
+            {
+                Console.WriteLine($"Colleague1 receives notification message: {message}");
+            }
+        }
+```
+### Main
+```c#
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var mediator = new ConcreteMediator();
+            var c1 = mediator.CreateColleague<Colleague1>();
+            var c2 = mediator.CreateColleague<Colleague2>();
+            c1.Send("Hello, World! (from c1)");
+            c2.Send("hi, there! (from c2)");
+        }
+    }
+```
+### result
+<img src="https://user-images.githubusercontent.com/18700494/109396907-8fa6bd00-793c-11eb-94cf-f191d4880882.png" height="700"/>
+
