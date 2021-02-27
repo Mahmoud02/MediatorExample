@@ -11,9 +11,9 @@ the first solution you think about it is to CREATE  FUNCTION in the "A" class an
       ---
       send (B obj ){
       }
-    }
+    };
     Class B{
-    }:
+    };
 ```    
 ok, that works and maybe good in small solutions.
 
