@@ -56,7 +56,7 @@ we can create a list of type IMessage in each class and we will register all oth
     }
   }
   ```
-and so on for other classes.
+and so on for other classes.\
 that is a lot of code and we add the same code to each other classes.\
 The classes do a communication task and it should only be responsible for one thing.\
 In case we have many objects that interact with each other, we end up with very complex and nonmaintainable code. That’s why it is a good case to use the Mediator design pattern.\
