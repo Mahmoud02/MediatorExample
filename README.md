@@ -1,22 +1,18 @@
 # MediatorExample
 Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
 
-<img src="https://user-images.githubusercontent.com/18700494/109392691-3895ed80-7926-11eb-91b5-a8c5d2c6b31a.png" width="400" height="400"/>
-
-## let's define each class and its role
-<img src="https://user-images.githubusercontent.com/18700494/109392932-b0184c80-7927-11eb-9605-337ca371bbf3.png" width="600" height="300"/>
 
 ## before explaining Mediator, let's see these cases 
-###Case1: if object A wants to send a message to object B!!
+### Case1: if object A wants to send a message to object B!!
 the first solution you think about it is to CREATE  FUNCTION in the "A" class and name it "Send" and this function will receive an object of type B. then the "B" object will handle the msg.
-  class A {
+  : class A {
     ---
     ---
     send (B obj ){
     }
   }
   Class B{
-  }
+  } :
 ok, that works and maybe good in small solutions.
 
 ### Case2 :
@@ -63,4 +59,5 @@ and the communication will be like that.
 
 
 so here let's introduce the Mediator Pattern 
-img
+## let's define each class and its role
+<img src="https://user-images.githubusercontent.com/18700494/109392932-b0184c80-7927-11eb-9605-337ca371bbf3.png" width="600" height="300"/>
