@@ -65,3 +65,6 @@ The classes do a communication task and it should only be responsible for one th
 Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
 ## let's define each class and its role
 <img src="https://user-images.githubusercontent.com/18700494/109392932-b0184c80-7927-11eb-9605-337ca371bbf3.png" width="600" height="300"/>
+<img src="https://user-images.githubusercontent.com/18700494/109396159-eca07400-7938-11eb-948d-72102a2f4f1b.png" width="1000" height="300"/>
+
+
