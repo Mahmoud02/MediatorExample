@@ -1,6 +1,4 @@
 # MediatorExample
-Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
-
 
 ## before explaining Mediator, let's see these cases 
 ### Case1: if object A wants to send a message to object B!!
@@ -63,6 +61,7 @@ In case we have many objects that interact with each other, we end up with very 
 <img src="https://user-images.githubusercontent.com/18700494/109394273-dc839700-792e-11eb-97fd-ced9467b3e66.png" width="600" height="300"/>
 
 
-so here let's introduce the Mediator Pattern 
+# let's introduce the Mediator Pattern 
+Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
 ## let's define each class and its role
 <img src="https://user-images.githubusercontent.com/18700494/109392932-b0184c80-7927-11eb-9605-337ca371bbf3.png" width="600" height="300"/>
